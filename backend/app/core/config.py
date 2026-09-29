@@ -31,7 +31,10 @@ class Settings(BaseSettings):
     WHATSAPP_VERIFY_TOKEN: str = "landgov_verify_token"
 
     model_config = SettingsConfigDict(
-        env_file=Path(__file__).resolve().parent.parent.parent / ".env",
+        env_file=[
+            Path(__file__).resolve().parent.parent.parent / ".env",
+            Path(__file__).resolve().parent.parent.parent.parent / ".env",
+        ],
         extra="ignore"
     )
 
