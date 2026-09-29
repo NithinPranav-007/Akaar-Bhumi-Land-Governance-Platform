@@ -4,9 +4,12 @@ services:
     runtime: python
     region: oregon
     plan: free
+    branch: main
     rootDir: backend
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
     startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/analytics/summary
+    autoDeploy: true
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.9
@@ -21,4 +24,4 @@ services:
       - key: JWT_SECRET_KEY
         generateValue: true
       - key: ALLOWED_ORIGINS
-        value: "http://localhost:3000,http://127.0.0.1:3000"
+        value: "http://localhost:3000,http://127.0.0.1:3000,https://*.vercel.app"
