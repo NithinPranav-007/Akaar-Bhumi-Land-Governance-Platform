@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { API_BASE_URL } from '../api-client';
 
 export interface CopilotCitation {
   id: string;
@@ -62,7 +63,7 @@ export const useCopilotStore = create<CopilotState>((set) => ({
 
     // Check if backend API is reachable for RAG, or generate intelligent contextual response
     try {
-      const res = await fetch('http://localhost:8001/api/v1/policy-rag/query', {
+      const res = await fetch(`${API_BASE_URL}/api/v1/policy-rag/query`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ query: text, top_k: 3 }),
