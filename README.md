@@ -9,9 +9,9 @@
 [![Tests Passing](https://img.shields.io/badge/Tests-20%2F20%20Passed-brightgreen?style=flat-square)]()
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
 
-**Akaar Bhumi** is an AI-powered national digital ecosystem combining geospatial intelligence, legal knowledge graphs, econometric policy simulations, and multi-modal citizen interfaces into a single unified analytical dashboard.
+**Akaar Bhumi** (आकार भूमि) is an AI-powered national digital land governance ecosystem combining geospatial intelligence, legal knowledge graphs, econometric policy simulations, and multi-modal citizen interfaces into a single unified analytical research platform.
 
-Designed to sit above existing land-governance systems rather than replace them, Akaar Bhumi connects fragmented **land records, cadastral data, Earth observation, legal documents, research literature, environmental information, infrastructure data, and socioeconomic evidence** into a common analytical environment.
+Designed to sit above existing land-governance systems rather than replace them, Akaar Bhumi connects fragmented **cadastral records, textual RoR (Record of Rights), Earth observation, legal judgments, research literature, environmental buffers, infrastructure corridors, and socioeconomic evidence** into an evidence-traceable analytical environment.
 
 > **"Land data should not only be stored and retrieved. It should be connected, researched, analysed, tested, explained, and reused as evidence."**
 
@@ -19,39 +19,55 @@ Designed to sit above existing land-governance systems rather than replace them,
 
 ## 📑 Table of Contents
 
-1. [🚀 Quick Start Guide](#-quick-start-guide)
-2. [🔐 Demo Persona Credentials](#-demo-persona-credentials)
-3. [🏛️ Core Platform Modules](#️-core-platform-modules)
-4. [🧪 Testing & Verification](#-testing--verification)
-5. [📡 API Reference](#-api-reference)
-6. [📂 Project Directory Structure](#-project-directory-structure)
-7. [📤 Pushing to GitHub (Step-by-Step)](#-pushing-to-github-step-by-step)
-8. [🧬 Scientific & Empirical Architecture](#-scientific--empirical-architecture)
-   - [Core Value Proposition & USP](#evidence-traceable-spatial-legal-policy-simulation)
-   - [Geo CPSS — Policy Simulation Engine](#geo-cpss--policy-simulation-engine)
-   - [Bhu Nyaya — Preventive Land Risk Intelligence](#bhu-nyaya--preventive-land-risk-intelligence)
-   - [Evidence Provenance & Traceability](#evidence-provenance--traceability)
+1. [🌟 Key Highlights & Innovations](#-key-highlights--innovations)
+2. [🚀 Quick Start Guide](#-quick-start-guide)
+3. [🔐 Demo Persona Credentials](#-demo-persona-credentials)
+4. [🏛️ Core Platform Modules](#️-core-platform-modules)
+5. [🧬 System Architecture & ISO 19152 LADM](#-system-architecture--iso-19152-ladm)
+6. [🔬 Scientific Engines & Empirical Methodology](#-scientific-engines--empirical-methodology)
+   - [Geo CPSS — Counterfactual Policy Simulation](#geo-cpss--counterfactual-policy-simulation)
+   - [Bhu Nyaya — Title Fragility Index (TFI)](#bhu-nyaya--title-fragility-index-tfi)
+   - [Diffeomorphic Boundary Discrepancy Engine](#diffeomorphic-boundary-discrepancy-engine)
+   - [Policy RAG & Statutory Knowledge Copilot](#policy-rag--statutory-knowledge-copilot)
+7. [📡 Comprehensive API Reference](#-comprehensive-api-reference)
+8. [🧪 Testing & Verification](#-testing--verification)
+9. [📂 Project Directory Structure](#-project-directory-structure)
+10. [⚙️ Environment Configuration](#️-environment-configuration)
+11. [📄 License & Attribution](#-license--attribution)
+
+---
+
+## 🌟 Key Highlights & Innovations
+
+* **ISO 19152 LADM Compliant**: Canonical domain modeling structuring Parties (`LA_Party`), Spatial Units (`LA_SpatialUnit`), Administrative Rights, Restrictions, and Responsibilities (`LA_RRR`), and Sources (`LA_Source`).
+* **Sub-Meter Delhi NCT Multi-Tier Boundary Mapper**: High-fidelity GIS canvas integrating official GeoJSON boundaries across all **11 Districts, 70 Assembly Constituencies, and 290 Wards** with volunteer ground-coverage intelligence.
+* **Counterfactual Policy Simulation Sandbox (Geo CPSS)**: Real-time econometric modeling examining how policy levers (e.g., auto-mutation triggers, drone resurvey intervals, fast-track tribunals) alter dispute trajectories, agricultural transition, and economic velocity.
+* **Bhu Nyaya Title Fragility Index (TFI)**: Automated multi-factor risk assessment (0.00 – 1.00) measuring litigation probability, succession fragmentation, boundary mismatch, and encumbrance overlap.
+* **Diffeomorphic Cadastre-Reality Reconciler**: Compares historical revenue cadastres ($P_{cad}$) with drone/satellite observations ($P_{phys}$) to detect encroachment and boundary discrepancies.
+* **Full-Chain Evidence Traceability**: Backwards-traceable provenance graphs linking analytical outputs directly to court dockets (RCCMS), revenue records, and gazette notifications.
+* **Adaptive Theme Engine**: Flawless switching between Sleek Dark Mode and High-Legibility Light Mode with isolated Leaflet map stacking.
 
 ---
 
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
-* **Node.js** v18.0.0 or later (v20+ recommended)
-* **Python** 3.11 or later (Python 3.11, 3.12, 3.13 supported)
-* **Git** installed on your system
+* **Node.js**: v18.0.0 or later (v20+ LTS recommended)
+* **Python**: 3.11 or later (3.11, 3.12, 3.13 supported)
+* **Git**: Installed on your operating system
 
 ---
 
 ### Step 1: Clone the Repository
+
 ```bash
-git clone https://github.com/<your-username>/LandGov-Platform.git
-cd LandGov-Platform
+git clone https://github.com/NithinPranav-007/Akaar-Bhumi-Land-Governance-Platform.git
+cd Akaar-Bhumi-Land-Governance-Platform
 ```
 
 ---
 
-### Step 2: Set Up & Start Backend Server (FastAPI)
+### Step 2: Set Up & Launch Backend Server (FastAPI)
 
 ```bash
 # Navigate to backend directory
@@ -68,20 +84,20 @@ python -m venv .venv
 # Linux / macOS:
 source .venv/bin/activate
 
-# Install required dependencies
+# Install dependencies
 pip install -r requirements.txt
 
-# Run the FastAPI server with Uvicorn
+# Start FastAPI application with Uvicorn
 uvicorn app.main:app --port 8001 --reload
 ```
 
 * 🟢 **Backend API Base**: `http://localhost:8001`
-* 📘 **Interactive Swagger Documentation**: `http://localhost:8001/docs`
-* 📕 **ReDoc Alternative**: `http://localhost:8001/redoc`
+* 📘 **Interactive OpenAPI / Swagger**: `http://localhost:8001/docs`
+* 📕 **Alternative ReDoc UI**: `http://localhost:8001/redoc`
 
 ---
 
-### Step 3: Set Up & Start Frontend Web Portal (Next.js 15)
+### Step 3: Set Up & Launch Frontend Web Portal (Next.js 15)
 
 Open a **new terminal tab**:
 
@@ -102,17 +118,17 @@ npm run dev -- -p 3000
 
 ## 🔐 Demo Persona Credentials
 
-All demo persona accounts use the universal password: **`123456`** (or can be switched instantly via the topbar role switcher).
+Akaar Bhumi features role-based access control (RBAC) across government, research, and citizen tiers. Use the universal password **`123456`** or switch roles instantly via the topbar persona selector:
 
-| Role | Operational Scope | Email | Password |
+| Persona | Operational Scope | Email | Password |
 | :--- | :--- | :--- | :---: |
-| **National Super Admin** | Central Directorate / DoLR | `superadmin@landgov.gov.in` | `123456` |
+| **National Super Admin** | Central Directorate / DoLR / DILRMP 3.0 | `superadmin@landgov.gov.in` | `123456` |
 | **Ministry Official** | Ministry of Rural Development | `mord.secretary@landgov.gov.in` | `123456` |
 | **Delhi State Revenue Secretary** | State Revenue HQ / Delhi NCT | `state.delhi@landgov.gov.in` | `123456` |
 | **District Magistrate (DM)** | District Collectorate / New Delhi | `dm.newdelhi@landgov.gov.in` | `123456` |
 | **Revenue Officer (Tehsildar)** | Tehsil Sub-Registrar / Najafgarh | `revenue.officer@landgov.gov.in` | `123456` |
 | **Lead Academic Researcher** | Geospatial AI Lab / IIT Delhi | `researcher@iitd.ac.in` | `123456` |
-| **Citizen / Landholder** | Public Landholder / Bhu-Seva | `citizen@bharatmail.in` | `123456` |
+| **Citizen / Landholder** | Public Landholder / Bhu-Seva Portal | `citizen@bharatmail.in` | `123456` |
 
 ---
 
@@ -120,204 +136,233 @@ All demo persona accounts use the universal password: **`123456`** (or can be sw
 
 | Route | Module Name | Primary Capability |
 | :--- | :--- | :--- |
-| `/` | **Research & Policy Dashboard** | Real-time monitoring of DILRMP cadastral computerization, SVAMITVA village property card coverage, and state-wise performance rankings. |
-| `/gis-studio` | **GIS Spatial Studio** | Sub-meter cadastral parcel (Khasra) viewer, Leaflet multi-layer boundary controls, dispute density heatmaps, and climate risk overlays. |
-| `/simulation` | **Policy Simulation Sandbox** | Counterfactual econometric modeling testing how policy levers (drone surveys, auto-mutation, fast-track tribunals) affect dispute reduction and land-use transition. |
-| `/risk-triangulation` | **Dispute Risk Analytics** | Land Title Fragility Index (TFI), RCCMS litigation dockets, and tripartite risk triangulation. |
-| `/conclusive-titling` | **Conclusive Titling Hub** | Presumptive-to-conclusive title transition, state title guarantee eligibility, and indemnity fund exposure calculators. |
-| `/data-repository` | **Data Repository & Ingestion** | Centralized catalog of cadastral datasets, multi-format ingestion logs (GeoJSON, CSV), and provenance audit telemetry. |
-| `/ai-search` | **AI Policy & Legal Search** | Semantic vector search across Land Revenue Acts, Gazettes, High Court judgments, and academic literature. |
-| `/knowledge-hub` | **Knowledge Hub** | Curated policy briefs, state land reforms comparative charts, and empirical research reports. |
-| `/research-lab` | **Research Lab** | Collaborative analytical workspaces, computational notebooks, and empirical econometric experiments. |
-| `/innovation-hub` | **Innovation Portal** | National land governance challenges, competitive research grants, and pilot project incubators. |
+| `/` | **Research & Policy Dashboard** | National macro indicators: DILRMP 3.0 computerization percentage, SVAMITVA village property card saturation, Delhi NCT boundary map, and district coverage tracker. |
+| `/gis-studio` | **GIS Spatial Studio** | Interactive sub-meter parcel viewer, multi-layer boundary controls (cadastre, satellite, eco-zones, disputed parcels), split-screen diffs, and coordinate queries. |
+| `/simulation` | **Policy Simulation Sandbox** | Interactive econometric modeling adjusting policy levers (drone resurveys, tribunal speed, auto-mutation) to project litigation impact and land conversion. |
+| `/risk-triangulation` | **Dispute Risk Analytics** | Title Fragility Index (TFI) calculators, RCCMS revenue court dockets, tripartite risk classification, and litigation chronology. |
+| `/conclusive-titling` | **Conclusive Titling Hub** | Torrens-system transition metrics, state guarantee eligibility scoring, and fiscal exposure calculators for state title indemnity reserves. |
+| `/data-repository` | **Data Repository & Ingestion** | Central registry of verified cadastral datasets, multi-format ingestion logs (GeoJSON, CSV, PDF), and cryptographic hash audit trails. |
+| `/ai-search` | **AI Policy & Legal Search** | RAG-powered statutory research querying Land Revenue Acts, Delhi RCCMS judgments, and academic literature with confidence scoring and citations. |
+| `/knowledge-hub` | **Knowledge Hub** | Curated repository of central and state land reform policies, comparative regulatory frameworks, and reform blueprints. |
+| `/research-lab` | **Research Lab** | Analytical notebooks, empirical econometric research papers, and reproducible land-economics research environments. |
+| `/innovation-hub` | **Innovation Portal** | Open national challenge tracker, competitive innovation grant calls, and pilot project funding registries. |
+
+---
+
+## 🧬 System Architecture & ISO 19152 LADM
+
+Akaar Bhumi adheres strictly to the **ISO 19152 Land Administration Domain Model (LADM)** international standard:
+
+```
+┌────────────────────────────────────────────────────────────────────────┐
+│                   AKAAR BHUMI ARCHITECTURE OVERVIEW                    │
+└────────────────────────────────────────────────────────────────────────┘
+
+ [ Presentation Layer — Next.js 15 (App Router, TailwindCSS, Zustand) ]
+       │                                                      │
+       ▼                                                      ▼
+ [ Multi-Layer Leaflet GIS ]                           [ Copilot & Sandboxes ]
+ (Delhi Wards, Districts, ULPINs)                     (Sliders, RAG, TFI)
+       │                                                      │
+ ══════╪══════════════════════════════════════════════════════╪══════════
+       ▼                                                      ▼
+ [ API Gateway & Ingestion — FastAPI 0.115 ]
+  ├── Canonical Model Adapters (Delhi Connector, CSV, GeoJSON, RCCMS)
+  ├── Full-Chain Traceability Engine (ULPIN & Khasra Identifier Trace)
+  ├── Econometric Policy Simulation Engine (Synthetic Control / DD)
+  └── Statutory RAG Pipeline (Revenue Acts & Court Dockets)
+       │                                                      │
+ ══════╪══════════════════════════════════════════════════════╪══════════
+       ▼                                                      ▼
+ [ Storage & Persistence ]
+  ├── SQLite Relational Engine (`landgov.db` — Parcels, Users, Disputes)
+  └── Neo4j Graph DB Client (Spatial-Legal-Pedigree Knowledge Graph)
+```
+
+### ISO 19152 LADM Entity Mapping
+
+```
+      ┌─────────────────────────┐
+      │  LA_Party (Landholder)  │
+      └────────────┬────────────┘
+                   │
+                   ▼ (holds)
+      ┌─────────────────────────┐         ┌─────────────────────────┐
+      │     LA_RRR (Rights,     │────────▶│    LA_Source (Title,    │
+      │  Restrictions, Resp.)   │         │    Deed, Court Docket)  │
+      └────────────┬────────────┘         └─────────────────────────┘
+                   │
+                   ▼ (applies to)
+      ┌─────────────────────────┐
+      │ LA_SpatialUnit (Parcel) │
+      │   ULPIN / Khasra No.    │
+      └─────────────────────────┘
+```
+
+---
+
+## 🔬 Scientific Engines & Empirical Methodology
+
+### Geo CPSS — Counterfactual Policy Simulation
+The Policy Simulation Sandbox models the causal impact of state and national policy decisions:
+* **Spatial Baseline**: Incorporates proximity to transit, baseline dispute velocity, agricultural zoning, and parcel fragmentation.
+* **Causal Inference**: Implements Synthetic Difference-in-Differences to model treatment effects when changing:
+  * Drone Resurvey Frequency (1–10 years)
+  * Auto-Mutation Threshold (₹ Lakhs)
+  * Fast-Track Revenue Tribunal Capacity (Benches)
+* **Outcome Projections**: Computes projected 5-year litigation reduction percentage and agricultural-to-urban conversion rates.
+
+### Bhu Nyaya — Title Fragility Index (TFI)
+The Title Fragility Index calculates a weighted compound risk score between `0.00` (Pristine, Clear Title) and `1.00` (Severe Latent Risk):
+$$\text{TFI} = w_1 \cdot R_{lit} + w_2 \cdot R_{cad} + w_3 \cdot R_{succ} + w_4 \cdot R_{eco}$$
+Where:
+* $R_{lit}$: Pending or historical revenue court litigation index
+* $R_{cad}$: Spatial boundary discrepancy between cadastre and physical reality
+* $R_{succ}$: Undivided ancestral co-parcenary and unmutated succession risk
+* $R_{eco}$: Encroachment onto ecologically protected forest, wetland, or gram sabha commons
+
+### Diffeomorphic Boundary Discrepancy Engine
+Detects non-rigid geometric deviations between historical revenue cadastres ($P_{cad}$) and high-resolution orthorectified drone surveys ($P_{phys}$):
+* Computes surface area delta ($\Delta A = |A_{phys} - A_{cad}|$)
+* Highlights encroached boundary segments in red hatched SVG textures
+* Generates localized cadastral-reality overlap vectors
+
+### Policy RAG & Statutory Knowledge Copilot
+* Extracts semantic embeddings from the Delhi Land Reforms Act, UP Revenue Code, Transfer of Property Act, and Supreme Court rulings.
+* Returns verified statutory citations, legal confidence scores, and chunk-level provenance.
+
+---
+
+## 📡 Comprehensive API Reference
+
+All REST endpoints are documented live with request/response schemas at `http://localhost:8001/docs`.
+
+### Core API Catalog
+
+| Method | Endpoint | Description |
+| :--- | :--- | :--- |
+| `GET` | `/api/v1/parcels/` | Retrieve all land parcels with pagination and state/district filters |
+| `GET` | `/api/v1/parcels/{id}` | Detailed parcel profile, boundaries, and risk factors |
+| `GET` | `/api/v1/canonical/trace/{identifier}` | Full-chain provenance trace by ULPIN or Khasra Number |
+| `GET` | `/api/v1/canonical/hierarchy` | Complete administrative hierarchy tree (State → District → Ward) |
+| `GET` | `/api/v1/canonical/provenance` | Ingestion batch metadata, checksums, and audit telemetry |
+| `GET` | `/api/v1/disputes/` | Active revenue litigation cases, court dockets, and claim values |
+| `POST` | `/api/v1/simulation/run` | Execute econometric counterfactual scenario with policy parameters |
+| `POST` | `/api/v1/policy-rag/query` | Query statutory knowledge base and receive citations |
+| `GET` | `/api/v1/analytics/summary` | Macro platform KPIs (dispute rate, titling progress, registered parcels) |
+| `POST` | `/api/v1/ingestion/geojson` | Ingest spatial boundary GeoJSON features |
+| `POST` | `/api/v1/ingestion/csv-parcels` | Batch ingest tabular revenue records |
+| `GET` | `/api/v1/repository/policies` | Retrieve catalog of state and national land governance policies |
+| `GET` | `/api/v1/repository/papers` | Retrieve published academic and empirical research papers |
+| `GET` | `/api/v1/innovation/items` | Retrieve national challenges, research grants, and pilot initiatives |
 
 ---
 
 ## 🧪 Testing & Verification
 
-### Running Backend Unit & Contract Tests
-The platform includes an automated pytest suite covering multi-source ingestion, canonical data contracts, full-chain traceability, and schema validation.
+### Running Automated Backend Test Suite
+The platform includes an automated pytest suite validating data contracts, canonical transformations, connector extensibility, error boundaries, and end-to-end traceability:
 
 ```bash
 cd backend
 .\.venv\Scripts\python -m pytest
 ```
 
-**Test Results Summary**:
 ```text
+============================= test session starts =============================
 tests/test_connector_extensibility.py .                                  [  5%]
 tests/test_delhi_ingestion.py ....                                       [ 25%]
 tests/test_existing_contracts.py ....                                    [ 45%]
 tests/test_traceability.py ......                                        [ 75%]
 tests/test_validation_and_errors.py .....                                [100%]
 
-======================== 20 passed in 8.11s ========================
+============================== 20 passed in 8.11s ==============================
 ```
 
-### Typechecking & Production Build (Frontend)
+### Frontend TypeScript Verification & Build Check
 ```bash
 cd frontend
 
-# Verify TypeScript types
+# Verify static typing
 npx tsc --noEmit
 
-# Compile production bundle
+# Test production build
 npm run build
 ```
-
----
-
-## 📡 API Reference
-
-Interactive OpenAPI documentation is available live at `http://localhost:8001/docs`.
-
-### Selected Core Endpoints
-
-* **Parcels**:
-  * `GET /api/v1/parcels/` — List all canonical land parcels (paginated, filterable by state, district, title status)
-  * `GET /api/v1/parcels/{id}` — Fetch detailed parcel metadata including GeoJSON boundary and risk score
-* **Traceability & Provenance**:
-  * `GET /api/v1/canonical/trace/{identifier}` — Full-chain traceability by Khasra number, ULPIN, or internal ID
-  * `GET /api/v1/canonical/hierarchy` — Multi-tier administrative tree (State → District → Tehsil → Ward/Village)
-  * `GET /api/v1/canonical/provenance` — Ingestion batch telemetry, record counts, and data quality metrics
-* **Disputes & Courts**:
-  * `GET /api/v1/disputes/` — Active litigation cases and revenue court proceedings
-* **Policy Simulation**:
-  * `POST /api/v1/simulation/run` — Run counterfactual scenario simulations with custom policy parameters
-* **Ingestion**:
-  * `POST /api/v1/ingestion/geojson` — Ingest spatial cadastral GeoJSON features
-  * `POST /api/v1/ingestion/csv-parcels` — Batch ingest tabular revenue records
 
 ---
 
 ## 📂 Project Directory Structure
 
 ```text
-LandGov-Platform/
+Akaar-Bhumi-Land-Governance-Platform/
 ├── backend/
 │   ├── app/
-│   │   ├── api/v1/endpoints/       # FastAPI route handlers (parcels, disputes, simulation, etc.)
-│   │   ├── core/                   # Security, settings, and JWT config
-│   │   ├── domain/models/          # SQLModel domain entities (LandParcel, User, DisputeCase)
-│   │   ├── domain/services/        # Business logic & canonical adapters
-│   │   └── infrastructure/db/      # SQLite & Neo4j graph clients
+│   │   ├── api/v1/endpoints/       # FastAPI endpoints (parcels, disputes, simulation, etc.)
+│   │   ├── core/                   # Security settings, JWT tokens, application config
+│   │   ├── domain/models/          # ISO 19152 LADM SQLModel entities
+│   │   ├── domain/services/        # Ingestion adapters, canonical service, policy RAG
+│   │   └── infrastructure/db/      # SQLite client & Neo4j graph connector
 │   ├── data/                       # Local SQLite storage (landgov.db)
-│   ├── tests/                      # Pytest unit & integration test suite
+│   ├── tests/                      # Pytest automated test suite (20 tests)
 │   ├── requirements.txt            # Python dependencies
-│   └── pytest.ini                  # Pytest configuration
+│   └── pytest.ini                  # Pytest runner configuration
 ├── frontend/
-│   ├── public/                     # GeoJSON spatial boundaries (Delhi districts, wards, Leaflet)
+│   ├── public/                     # GeoJSON spatial files (Delhi districts, wards, Leaflet)
 │   ├── src/
-│   │   ├── app/                    # Next.js App Router (dashboard routes & pages)
-│   │   ├── components/             # Reusable UI widgets
-│   │   │   ├── layout/             # Sidebar, topbar, search, user navigation
-│   │   │   ├── spatial/            # Leaflet map canvas, layers, boundary diff viewers
+│   │   ├── app/                    # Next.js 15 App Router (all dashboard routes)
+│   │   ├── components/             # Modular React UI components
+│   │   │   ├── campaign/           # District coverage list & volunteer panels
+│   │   │   ├── inspector/          # LADM entity inspector, AI copilot, dossier export
+│   │   │   ├── layout/             # Shell, sidebar, topbar, ULPIN search, theme switcher
+│   │   │   ├── risk/               # TFI calculators, litigation timelines, triage tools
 │   │   │   ├── simulation/         # Parameter sliders, transition matrices, causal effects
-│   │   │   ├── risk/               # Title fragility calculators, litigation timelines
-│   │   │   └── sources/            # Active notebook sources, document uploaders
+│   │   │   ├── sources/            # Chunk inspector modal, source uploaders
+│   │   │   └── spatial/            # Delhi OSM Leaflet map, map canvas, diff viewer
 │   │   └── lib/                    # Zustand stores, API client, types, utilities
-│   ├── package.json                # Frontend dependencies
-│   └── tailwind.config.ts          # TailwindCSS configuration
+│   ├── package.json                # Frontend package configuration
+│   └── tailwind.config.ts          # Tailwind CSS styling configuration
+├── DATA_CONTRACT.md                # Canonical data contract specification
+├── DESIGN.md                       # Comprehensive design system guidelines
+├── PROBLEM_STATEMENT.md            # National land governance problem analysis
 ├── .gitignore                      # Git exclusion rules
-└── README.md                       # Platform documentation
+└── README.md                       # Comprehensive platform documentation
 ```
 
 ---
 
-## 📤 Pushing to GitHub (Step-by-Step)
+## ⚙️ Environment Configuration
 
-If this workspace is not yet connected to your remote repository, execute the following commands in the workspace root:
+### Backend Configuration (`backend/.env`)
+Create a `.env` file in the `backend/` directory if configuring external databases:
 
-```bash
-# 1. Initialize Git repository
-git init
+```ini
+PROJECT_NAME="Akaar Bhumi"
+VERSION="3.0.0"
+API_V1_STR="/api/v1"
+SECRET_KEY="landgov-secret-key-for-development-change-in-production"
+ACCESS_TOKEN_EXPIRE_MINUTES=1440
 
-# 2. Add all project files (node_modules, .venv, and caches are automatically ignored)
-git add .
+# SQLite (Default)
+DATABASE_URL="sqlite:///./data/landgov.db"
 
-# 3. Create initial commit
-git commit -m "feat: complete operational setup of LandGov Platform with verified tests"
+# Neo4j Graph DB (Optional)
+NEO4J_URI="bolt://localhost:7687"
+NEO4J_USER="neo4j"
+NEO4J_PASSWORD="password"
+```
 
-# 4. Set main branch
-git branch -M main
+### Frontend Configuration (`frontend/.env.local`)
+Create a `.env.local` file in the `frontend/` directory if deploying on a custom domain:
 
-# 5. Link your GitHub remote repository (replace with your repository URL)
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-
-# 6. Push code to GitHub
-git push -u origin main
+```ini
+NEXT_PUBLIC_API_URL=http://localhost:8001/api/v1
 ```
 
 ---
 
-## 🧬 Scientific & Empirical Architecture
+## 📄 License & Attribution
 
-### The Research-Platform Role
-India has made major progress in digitizing land records (DILRMP) and rural property mapping (SVAMITVA). However, land information has historically remained distributed across isolated administrative silos:
-* **Data fragmentation**: Revenue, registration, survey, planning, environmental, and judicial systems operate independently.
-* **Cadastral–textual desynchronisation**: Boundary geometry and textual titles frequently evolve through divergent workflows.
-* **Geospatial–legal separation**: Satellite observations and cadastral boundaries lack a direct analytical bridge to legal statutes and court precedents.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-LandGov bridges these gaps through a unified **evidence, intelligence, and simulation layer**:
-
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                         LANDGOV                              │
-│         National Research & Policy Innovation Layer          │
-└──────────────────────────────────────────────────────────────┘
-                         │
-        ┌────────────────┼────────────────┐
-        │                │                │
-        ▼                ▼                ▼
- ┌────────────┐   ┌──────────────┐  ┌────────────────┐
- │ KNOWLEDGE  │   │ INTELLIGENCE │  │ POLICY SANDBOX │
- ├────────────┤   ├──────────────┤  ├────────────────┤
- │ Research   │   │ Cadastral    │  │ What-if        │
- │ Legal      │   │ Satellite    │  │ Simulation     │
- │ Policies   │   │ Drone        │  │ Causal         │
- │ Judgments  │   │ LULC         │  │ Evaluation     │
- │ Reports    │   │ Climate      │  │ Scenarios      │
- └────────────┘   └──────────────┘  └────────────────┘
-        │                │                │
-        └────────────────┼────────────────┘
-                         ▼
-                EVIDENCE TRACEABILITY
-                         ▼
-              RESEARCH / POLICY INSIGHT
-                         ▼
-                HUMAN DECISION MAKER
-```
-
-### Evidence-Traceable Spatial-Legal Policy Simulation
-LandGov's central differentiator is the combination of **cadastral geometry + Earth observation + legal jurisprudence + research evidence + policy simulation + provenance**.
-
-Every analytical output is traceable to supporting evidence:
-```text
-Risk / Insight / Projection
-          │
-          ▼
-   ┌───────────────┐
-   │  Explanation  │
-   └───────────────┘
-          │
-    ┌─────┼─────┬────────┐
-    ▼     ▼     ▼        ▼
-Cadastral EO   Legal   Research
- Record   Data  Record  Evidence
-```
-
-### Geo CPSS — Policy Simulation Engine
-* **Layer 1 (Spatial baseline)**: Historical Earth observation and contextual variables model land-use transitions (distance to roads, terrain, zoning, ownership fragmentation, climate).
-* **Layer 2 (Policy evaluation)**: Policy interventions are compared against baselines using causal-inference methods (Synthetic Control, Synthetic Difference-in-Differences, spatial counterfactuals).
-
-### Bhu Nyaya — Preventive Land Risk Intelligence
-Identifies pre-dispute risk indicators at the parcel level:
-* Cadastral-physical boundary variances
-* Contested succession / inheritance claims
-* Overlapping forest / waterbody eco-buffers
-* Unresolved revenue court dockets
-
----
-
-## 📄 License
-This project is licensed under the [MIT License](LICENSE).
+Developed as an open-source, evidence-traceable digital public infrastructure initiative aligned with **Digital India Land Records Modernization Programme (DILRMP 3.0)** and **SVAMITVA**.
