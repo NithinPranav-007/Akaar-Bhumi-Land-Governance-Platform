@@ -33,7 +33,8 @@ Designed to sit above existing land-governance systems rather than replace them,
 8. [🧪 Testing & Verification](#-testing--verification)
 9. [📂 Project Directory Structure](#-project-directory-structure)
 10. [⚙️ Environment Configuration](#️-environment-configuration)
-11. [📄 License & Attribution](#-license--attribution)
+11. [☁️ Cloud Deployment (Render Backend + Vercel Frontend)](#️-cloud-deployment-render-backend--vercel-frontend)
+12. [📄 License & Attribution](#-license--attribution)
 
 ---
 
@@ -358,6 +359,72 @@ Create a `.env.local` file in the `frontend/` directory if deploying on a custom
 ```ini
 NEXT_PUBLIC_API_URL=http://localhost:8001/api/v1
 ```
+
+---
+
+## ☁️ Cloud Deployment (Render Backend + Vercel Frontend)
+
+Akaar Bhumi is architected for zero-friction cloud deployment with decoupled frontend (Vercel edge hosting) and backend (Render Python service).
+
+```
+ ┌────────────────────────────────────────┐       HTTPS REST / JSON       ┌────────────────────────────────────────┐
+ │            VERCEL FRONTEND             │ ────────────────────────────▶ │             RENDER BACKEND             │
+ │    `https://akaar-bhumi.vercel.app`    │ ◀──────────────────────────── │ `https://akaar-bhumi.onrender.com`     │
+ │  Next.js 15 App Router · Static/SSR    │         CORS Pre-Flight       │   FastAPI · SQLite/Neo4j · Geo CPSS    │
+ └────────────────────────────────────────┘                               └────────────────────────────────────────┘
+```
+
+### Part A: Deploy Backend on Render
+
+The repository includes a ready-to-use Render Blueprint file ([`render.yaml`](render.yaml)).
+
+#### Option 1: Automatic Blueprint (Recommended)
+1. Go to your [Render Dashboard](https://dashboard.render.com).
+2. Click **New +** → **Blueprint**.
+3. Connect your GitHub repository (`NithinPranav-007/Akaar-Bhumi-Land-Governance-Platform`).
+4. Render will automatically detect [`render.yaml`](render.yaml) and configure the web service with:
+   - **Root Directory**: `backend`
+   - **Build Command**: `pip install -r requirements.txt`
+   - **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+5. Click **Apply**. Once built, note your backend URL (e.g. `https://akaar-bhumi-backend.onrender.com`).
+
+#### Option 2: Manual Web Service Setup
+If creating a Web Service manually on Render:
+* **Name**: `akaar-bhumi-backend`
+* **Region**: Oregon or Singapore
+* **Branch**: `main`
+* **Root Directory**: `backend`
+* **Runtime**: `Python 3`
+* **Build Command**: `pip install -r requirements.txt`
+* **Start Command**: `uvicorn app.main:app --host 0.0.0.0 --port $PORT`
+* **Environment Variables**:
+  | Key | Value |
+  | :--- | :--- |
+  | `PYTHON_VERSION` | `3.11.9` |
+  | `PROJECT_NAME` | `Akaar Bhumi` |
+  | `VERSION` | `3.0.0` |
+  | `API_V1_STR` | `/api/v1` |
+  | `DATABASE_URL` | `sqlite:///./data/landgov.db` |
+  | `ALLOWED_ORIGINS` | `https://*.vercel.app,http://localhost:3000` |
+
+> [!NOTE]
+> The backend's CORS middleware includes automated regex matching (`https://.*\.vercel\.app`), so any Vercel production or pull-request preview URL can communicate with the backend without CORS blocks.
+
+---
+
+### Part B: Deploy Frontend on Vercel
+
+1. Go to the [Vercel Dashboard](https://vercel.com/dashboard).
+2. Click **Add New...** → **Project**.
+3. Import your GitHub repository (`NithinPranav-007/Akaar-Bhumi-Land-Governance-Platform`).
+4. In the configuration screen:
+   * **Framework Preset**: `Next.js`
+   * **Root Directory**: Click **Edit** and select **`frontend`** (or leave as root, [`frontend/vercel.json`](frontend/vercel.json) is detected).
+5. Under **Environment Variables**, add:
+   * **Key**: `NEXT_PUBLIC_API_URL`
+   * **Value**: Your Render service URL (e.g., `https://akaar-bhumi-backend.onrender.com`)
+6. Click **Deploy**.
+7. Vercel will compile the Next.js bundle and provide your production link (e.g., `https://akaar-bhumi.vercel.app`).
 
 ---
 

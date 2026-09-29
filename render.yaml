@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: akaar-bhumi-backend
+    runtime: python
+    region: oregon
+    plan: free
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PROJECT_NAME
+        value: "Akaar Bhumi"
+      - key: VERSION
+        value: "3.0.0"
+      - key: API_V1_STR
+        value: "/api/v1"
+      - key: DATABASE_URL
+        value: "sqlite:///./data/landgov.db"
+      - key: JWT_SECRET_KEY
+        generateValue: true
+      - key: ALLOWED_ORIGINS
+        value: "http://localhost:3000,http://127.0.0.1:3000"

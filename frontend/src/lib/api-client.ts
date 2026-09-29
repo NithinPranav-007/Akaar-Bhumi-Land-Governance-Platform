@@ -3,8 +3,10 @@
  * Handles all backend interaction with timeout, abort, schema checks, and normalized error states.
  */
 
-export const API_BASE_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001';
+const rawApiUrl = (process.env.NEXT_PUBLIC_API_URL || 'http://127.0.0.1:8001').replace(/\/+$/, '');
+export const API_BASE_URL = rawApiUrl.endsWith('/api/v1')
+  ? rawApiUrl.slice(0, -7)
+  : rawApiUrl;
 
 export type ProvenanceType =
   | 'Backend-Derived'
