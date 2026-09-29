@@ -32,9 +32,8 @@ Designed to sit above existing land-governance systems rather than replace them,
 7. [📡 Comprehensive API Reference](#-comprehensive-api-reference)
 8. [🧪 Testing & Verification](#-testing--verification)
 9. [📂 Project Directory Structure](#-project-directory-structure)
-10. [⚙️ Environment Configuration](#️-environment-configuration)
-11. [☁️ Cloud Deployment (Render Backend + Vercel Frontend)](#️-cloud-deployment-render-backend--vercel-frontend)
-12. [📄 License & Attribution](#-license--attribution)
+10. [☁️ Cloud Deployment (Render Backend + Vercel Frontend)](#️-cloud-deployment-render-backend--vercel-frontend)
+11. [📄 License & Attribution](#-license--attribution)
 
 ---
 
@@ -328,36 +327,6 @@ Akaar-Bhumi-Land-Governance-Platform/
 ├── PROBLEM_STATEMENT.md            # National land governance problem analysis
 ├── .gitignore                      # Git exclusion rules
 └── README.md                       # Comprehensive platform documentation
-```
-
----
-
-## ⚙️ Environment Configuration
-
-### Backend Configuration (`backend/.env`)
-Create a `.env` file in the `backend/` directory if configuring external databases:
-
-```ini
-PROJECT_NAME="Akaar Bhumi"
-VERSION="3.0.0"
-API_V1_STR="/api/v1"
-SECRET_KEY="landgov-secret-key-for-development-change-in-production"
-ACCESS_TOKEN_EXPIRE_MINUTES=1440
-
-# SQLite (Default)
-DATABASE_URL="sqlite:///./data/landgov.db"
-
-# Neo4j Graph DB (Optional)
-NEO4J_URI="bolt://localhost:7687"
-NEO4J_USER="neo4j"
-NEO4J_PASSWORD="password"
-```
-
-### Frontend Configuration (`frontend/.env.local`)
-Create a `.env.local` file in the `frontend/` directory if deploying on a custom domain:
-
-```ini
-NEXT_PUBLIC_API_URL=http://localhost:8001/api/v1
 ```
 
 ---
